@@ -515,6 +515,38 @@ var ParticlePool = (function() {
     render();
   }, 10);
 })(document.getElementById('pinkboard'));
+ 
+ 
+ 
   </script>
+
+  
+  <script type='text/javascript'>
+ 
+function setC(visitors, value){
+var expireDate=new Date (2099, 12, 31);
+document.cookie = visitors + "=" + escape(value) + ((expireDate == null) ? "" : ("; expires=" +
+expireDate.toGMTString())) }
+function readC(visitors){
+var search = visitors + "=";
+var i, j;
+if (document.cookie.length > 0) {
+i = document.cookie.indexOf(search);
+if (i != -1) {
+i += search.length;
+j = document.cookie.indexOf(";", i);
+if (j == -1) j = document.cookie.length;
+return unescape(document.cookie.substring(i,j));
+} } }
+var num;
+num=readC("visitors");
+if (!num) num=0;
+num++;
+setC("visitors", num);
+document.write("<div class='visitors'>");
+document.write("<b>Bạn đã xem bài này "+num+" lần.<\/b>");
+document.write("<\/div>");
+ 
+</script>
  </BODY>
 </HTML>
